@@ -10,17 +10,10 @@ public class Employee {
     private String firstName;
     private String lastName;
     private Date birthday;
-    private int salaire;
     private Status status;
-    private Company company;
 
-    public Company getCompany() {
-        return company;
-    }
 
-    public void setCompany(Company company) {
-        this.company = company;
-    }
+
 
     public Status getStatus() {
         return status;
@@ -62,11 +55,5 @@ public class Employee {
         this.birthday = birthday;
     }
 
-    public int getSalaire() {
-        return salaire;
-    }
 
-    public void setSalaire(int salaire) {
-        this.salaire = salaire;
-    }
 }

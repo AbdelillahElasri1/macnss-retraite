@@ -35,9 +35,9 @@ public class Navigator extends Controller {
                     }
 
                 }
-                else{
-                    System.out.println("\nInvalid Entry , Choose one of the following options: ");
-                }
+//                else{
+//                    System.out.println("\nInvalid Entry , Choose one of the following options: ");
+//                }
             }
 
         }catch (Exception e){

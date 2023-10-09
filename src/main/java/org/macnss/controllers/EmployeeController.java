@@ -29,9 +29,6 @@ public class EmployeeController extends  Controller{
             System.out.println("Enter lastName : ");
             System.out.print("-> ");
             String lastName = scanner.next();
-            System.out.println("Enter salaire : ");
-            System.out.print("-> ");
-            int salaire = scanner.nextInt();
             System.out.println("Enter birthday (yyyy-MM-dd) : ");
             System.out.print("-> ");
             String birthday = scanner.next();
@@ -49,9 +46,6 @@ public class EmployeeController extends  Controller{
             employee.setFirstName(fistName);
             employee.setLastName(lastName);
             employee.setBirthday(covertDate);
-            employee.setSalaire(salaire);
-            Company company = new Company();
-            employee.setCompany(company);
             if (daysDeff >= 20075){
                 String retraite = String.valueOf(Status.RETRAITE);
                 employee.setStatus(Status.valueOf(retraite));
@@ -61,7 +55,7 @@ public class EmployeeController extends  Controller{
             }
             if (employeeService.createEmployee(employee) != null){
                 System.out.println("employee added success");
-            }else {
+            } else {
                 System.out.println("employee not added");
             }
 

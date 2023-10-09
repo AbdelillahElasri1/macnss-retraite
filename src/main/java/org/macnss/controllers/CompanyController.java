@@ -11,6 +11,7 @@ import java.text.ParseException;
 public class CompanyController extends Controller{
     CompanyService companyService = new CompanyService();
     EmployeeController employeeController = new EmployeeController();
+    EmployeeHistoryController employeeHistoryController = new EmployeeHistoryController();
     public void index(){
         System.out.println("welcome to our space company ");
         System.out.println("1- register .");
@@ -72,9 +73,13 @@ public class CompanyController extends Controller{
         System.out.println("3- get employee.");
         System.out.println("4- get all employee.");
         System.out.println("5- delete employee.");
+        System.out.println("6- employee Details.");
+        System.out.println("7- Retraite of employee.");
         int option = scanner.nextInt();
         switch (option){
             case 1 -> employeeController.saveEmployee();
+            case 6 -> employeeHistoryController.saveHistory();
+            case 7 -> employeeHistoryController.getHistory();
         }
     }
 }

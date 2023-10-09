@@ -11,15 +11,13 @@ import java.util.List;
 public class EmployeeDao implements IEmployeeDAO {
     @Override
     public Employee insert(Employee employee)  {
-        String query = "INSERT INTO employee (matricule, firstName, lastName,birthday,salaire,status,company_id) VALUES (?,?,?,?,?,?,?)";
+        String query = "INSERT INTO employee (matricule, firstName, lastName,birthday,status) VALUES (?,?,?,?,?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)){
             preparedStatement.setString(1,employee.getMatricule());
             preparedStatement.setString(2,employee.getFirstName());
             preparedStatement.setString(3,employee.getLastName());
             preparedStatement.setDate(4, (Date) employee.getBirthday());
-            preparedStatement.setInt(5,employee.getSalaire());
-            preparedStatement.setString(6, String.valueOf(employee.getStatus()));
-            preparedStatement.setString(7,employee.getCompany().getId());
+            preparedStatement.setString(5, String.valueOf(employee.getStatus()));
             int row = preparedStatement.executeUpdate();
             if (row > 0){
                 return employee;
@@ -49,4 +47,5 @@ public class EmployeeDao implements IEmployeeDAO {
     public List<Employee> getAll() throws SQLException {
         return null;
     }
+
 }
